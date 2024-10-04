@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\User\Command\Create;
 
 use App\User\Entity\ValueObject\Role;
+use App\User\Validator\UniqueEmail\UniqueEmail;
 use Symfony\Component\Validator\Constraints as Assert;
 
 final readonly class CreateUserCommand
@@ -12,6 +13,7 @@ final readonly class CreateUserCommand
     public function __construct(
         #[Assert\NotBlank]
         #[Assert\Email]
+        #[UniqueEmail]
         public string $email,
         #[Assert\NotBlank]
         #[Assert\Choice(callback: [Role::class, 'casesAtString'], message: 'The duration type is not valid.')]

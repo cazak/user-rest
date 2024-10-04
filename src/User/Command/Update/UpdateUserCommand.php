@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\User\Command\Update;
 
 use App\User\Entity\ValueObject\Role;
+use App\User\Validator\OwnOrUniqueField\OwnOrUniqueField;
+use App\User\Validator\OwnOrUniqueField\OwnOrUniqueFieldContext;
 use Symfony\Component\Validator\Constraints as Assert;
 
 final readonly class UpdateUserCommand
@@ -24,4 +26,13 @@ final readonly class UpdateUserCommand
         #[Assert\NotBlank]
         public string $surname,
     ) {}
+
+    #[OwnOrUniqueField(
+        fieldName: 'email.value',
+        propertyPath: 'email',
+    )]
+    public function hasOwnOrUniqueEmail(): OwnOrUniqueFieldContext
+    {
+        return new OwnOrUniqueFieldContext($this->id, $this->email);
+    }
 }
