@@ -1,5 +1,13 @@
-controllers:
+user:
     resource:
         path: ../src/User/Api/
         namespace: App\User\Api
     type: attribute
+    prefix: /api
+
+security:
+    resource:
+        path: ../src/Security/
+        namespace: App\Security
+    type: attribute
+    prefix: /api
