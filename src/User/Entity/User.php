@@ -45,6 +45,13 @@ class User
         $this->createdAt = new DateTimeImmutable();
     }
 
+    public function update(Email $email, Name $name, Role $role): void
+    {
+        $this->email = $email;
+        $this->name = $name;
+        $this->role = $role;
+    }
+
     public function getId(): Uuid
     {
         return $this->id;

@@ -24,6 +24,13 @@ final readonly class UserRepository
         $this->entityManager->flush();
     }
 
+    public function findById(string $id): ?User
+    {
+        return $this->entityManager
+            ->getRepository(User::class)
+            ->findOneBy(['id' => $id]);
+    }
+
     public function findByEmail(string $email): ?User
     {
         return $this->entityManager
