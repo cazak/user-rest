@@ -21,13 +21,13 @@ security:
                 failure_handler: lexik_jwt_authentication.handler.authentication_failure
                 username_path: email
 
-        api:
-            pattern: ^/api
-            stateless: true
-            jwt: ~
+#        api:
+#            pattern: ^/api
+#            stateless: true
+#            jwt: ~
 
     access_control:
-        - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
+#        - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
 
 when@test:
     security:
