@@ -1,0 +1,9 @@
+PUT http://localhost/api/users/{uuid}
+Content-Type: application/json
+
+{
+  "email": "test@test.test",
+  "role": "ROLE_USER",
+  "name": "name",
+  "surname": "surname2"
+}

@@ -1,0 +1,11 @@
+POST http://localhost/api/users
+Content-Type: application/json
+
+{
+  "email": "test@test.test",
+  "role": "ROLE_ADMIN",
+  "name": "name",
+  "surname": "surname",
+  "password": "qweasdzxc123"
+}
+

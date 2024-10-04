@@ -14,6 +14,7 @@ make db_migrate
 Предварительно настроить `./.env.local`, `./docker/.env`, `./docker/mysql/.env`
 
 ## API Методы
+В `examples` директории лежат примеры scratch файлов для PHPStorm.
 
 Для CRUD операций отключена Bearer авторизация, чтобы ее включить
 нужно раскомментировать код в `config/security.yaml`

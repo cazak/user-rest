@@ -1,0 +1,2 @@
+DELETE http://localhost/api/users/{uuid}
+Content-Type: application/json
